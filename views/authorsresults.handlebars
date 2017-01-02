@@ -1,0 +1,48 @@
+<div class="page-header">
+	<h1 id="database_selected">Author</h1>
+</div>
+
+<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#hform">Add Reccord</button>
+<br>
+<br>
+<div id="hform" class="container collapse">
+	<form class="form-inline" role="form" push="right" method="POST" action="/author/create">
+	   <div class="form-group col-sm-2">
+		      <label for="authorNum">Author Number</label>
+			  <input type="text" class="form-control" id="" placeholder="Author Number" name="authorNum">
+	   </div>
+	   <div class="form-group col-sm-2">
+		      <label for="authorLast">Author Last</label>
+			  <input type="text" class="form-control" id="" placeholder="Author Last" name="authorLast">
+		</div>
+	    <div class="form-group col-sm-2">
+		      <label for="authorLast">Author First</label>
+			  <input type="text" class="form-control" id="" placeholder="Author First" name="authorFirst">
+		</div>
+			<div>
+	   		<button type="submit" class="btn btn-success">Register</button>
+	   	</div>
+	</form>
+</div>
+
+<br>
+<div class="panel panel-default">
+ 	<table class=" table table-hover">
+ 		<tr>
+ 		{{#each header}}
+ 				<th class='table-header'>{{this.name}}</th>
+ 		{{/each}}
+ 		</tr>
+ 		{{#each result}}
+ 			<tr >
+	 			<td> <input type="text" class="form-control" value="{{this.authorNum}}" name="authorNum" disabled></td>
+	 			<td> <input type="text" class="form-control" value="{{this.authorLast}}" name="authorLast"></td>
+	 			<td> <input type="text" class="form-control" value="{{this.authorFirst}}" name="authorFirst"></td>
+				<td align="right">
+					<a href="#" type="button" class="btn btn-danger  submit-delete">Remove</a>
+					<a href="#" type="button" class="btn btn-success submit-update">Update</a>
+				</td>
+ 			</tr>
+ 		{{/each}}
+	</table>
+</div>

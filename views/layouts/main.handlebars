@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+	<head>
+		<title> DB ADMIN | {{title}} </title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/stylesheets/style.css">
+	</head>
+	<body>
+		{{>navbar}}
+		{{>pageheader}}
+		<br>
+		<div class="container-fluid" id="current-list">	
+			{{{body}}}
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- <script src ="/js/main.js"</script> -->
+		<script>
+			$(".submit-delete").click( function(event){
+				event.preventDefault
+				var data = {};
+
+				var database_selected = $("#database_selected").text();
+				console.log("Database selected is: " + database_selected);
+
+				$(this).parent().siblings().each(function(){
+					$(this).each(function(){
+						$(this).each(function(){
+							$(this).children().each(function(){
+								data[$(this).attr('name')] = $(this).attr('value');
+							});
+						});
+					});
+				});
+
+				for(property in data){
+					console.log(property + ": " + data[property]);
+				}
+
+				var url_delete = "/"+database_selected+"/delete";
+				console.log("delete url: " + url_delete);
+
+				//var url_list = "/"+database_selected+"/list";
+				//console.log("list url: " + url_list);
+				$.post( url_delete, data).done(function(){
+					window.location.reload();
+				});
+		   	});
+
+		   	$(".submit-update").click( function(event){
+				event.preventDefault
+				var data = {};
+
+				var database_selected = $("#database_selected").text();
+
+				console.log("Database selected is: " + database_selected);
+
+				$(this).parent().siblings().each(function(){
+					$(this).each(function(){
+						$(this).each(function(){
+							$(this).children().each(function(){
+								data[$(this).attr('name')] = $(this).attr('value');
+							});
+						});
+					});
+				});
+		   		console.log("Front end prints:");
+				for(property in data){
+					console.log(property + ": " + data[property]);
+				}
+
+				var url_delete = "/"+database_selected+"/update";
+				console.log("delete url: " + url_delete);
+
+				$.post( url_delete, data).done(function(){
+					window.location.reload();
+				});
+		   	});
+		$('input').on('change', function(){
+			console.log("Value changed!");
+			var current = $(this);
+			current.attr('value',current.val());
+		});
+		</script>
+	</body>
+	<footer>
+		{{>footer}}
+	</footer>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

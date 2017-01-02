@@ -1,0 +1,16 @@
+.table-header{
+	text-transform: uppercase;
+}
+
+.centered-div{
+	margin: 0 auto;
+}
+.table td.fit, 
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
+}
+
+.login-button{
+	margin-top: 15px;
+}

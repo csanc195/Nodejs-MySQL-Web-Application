@@ -1,0 +1,35 @@
+<div class="panel panel-default">
+ 	<table class=" table table-hover table-striped table-bordered table-sm">
+ 		<tr>
+ 		{{#if result}}
+	 		{{#each header}}
+	 				<th class='table-header'>{{this.name}}</th>
+	 		{{/each}}
+	 	</tr>
+ 		{{#each result}}
+ 			<tr>	
+ 				<td> {{this.title}} </td>
+ 				<td>  {{this.code}}</td>
+ 				<td>  {{this.authorFirst}}</td>
+ 				<td>  {{this.authorLast}}</td>
+ 				<td>  {{this.publisherName}}</td>
+ 				<td>  {{this.pCode}}</td>
+ 				<td>  {{this.branch}}</td>
+ 				<td>  {{this.blocation}}</td>
+ 				<td>  {{this.city}}</td>
+ 				<td>  {{this.OnHand}}</td>
+ 			</tr>
+ 		{{/each}}
+	 	{{/if}}
+	 	{{#unless result}}
+	 		<div class="container" align="center">
+	 			<br>
+	 			<h1><small>No Search Results</small></h1>
+	 			<br>
+	 		</div>
+	 	{{/unless}}
+	</table>
+</div>
+{{#if result}}
+	<h2><small> {{result.length}} results generated</small></h1>
+{{/if}}

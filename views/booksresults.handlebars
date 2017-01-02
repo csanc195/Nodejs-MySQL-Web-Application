@@ -1,0 +1,59 @@
+<div class="page-header">
+	<h1 id="database_selected">Book</h1>
+</div>
+
+<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#h-add-form">Add Reccord</button>
+<br><br>
+
+<div id="h-add-form" class="container collapse">
+	<form class="form-inline" role="form" align="right" method="POST" action="/book/create">
+	   <div class="form-group col-sm-2">
+		      <label for="bookCode">Book Code</label>
+			  <input type="text" class="form-control" id="" placeholder="Book Code" name="bookCode">
+	   </div>
+	   <div class="form-group col-sm-2">
+		      <label for="authorLast">Title</label>
+			  <input type="text" class="form-control" id="" placeholder="Book Title" name="title">
+		</div>
+	    <div class="form-group col-sm-2">
+		      <label for="authorLast">Publisher Code</label>
+			  <input type="text" class="form-control" id="" placeholder="Publisher Code" name="publisherCode">
+		</div>
+		 <div class="form-group col-sm-2">
+		      <label for="type">Type</label>
+			  <input type="text" class="form-control" id="" placeholder="Book Type" name="type">
+		</div>
+		 <div class="form-group col-sm-2">
+		      <label for="type">Paperback?</label>
+			  <input type="text" class="form-control" id="" placeholder="Paperback?" name="paperback">
+		</div>
+		<div class="col-sm-2">
+	   		<button type="submit" class="btn btn-success">Register</button>
+	   	</div>
+	</form>
+</div>
+
+<br>
+<div class="panel panel-default">
+ 	<table class=" table table-hover">
+ 		<tr>
+ 		{{#each header}}
+ 				<th class='table-header'>{{this.name}}</th>
+ 		{{/each}}
+ 				<th class='table-header' align="right"></th>
+ 		</tr>
+ 		{{#each result}}
+ 			<tr>
+ 				<td> <input type="text" class="form-control" value="{{this.bookCode}}" name="bookCode"disabled></td>
+ 				<td> <input type="text" class="form-control" value="{{this.title}}" name="title"></td>
+ 				<td> <input type="text" class="form-control" value="{{this.publisherCode}}" name="publisherCode"></td>
+ 				<td> <input type="text" class="form-control" value="{{this.type}}" name="type"></td>
+ 				<td> <input type="text" class="form-control" value="{{this.paperback}}" name="paperback"></td>
+ 				<td align="right">
+	 				<a href="#" type="button" class="btn btn-danger  submit-delete">Remove</a>
+	 				<a href="#" type="button" class="btn btn-success submit-update">Update</a>
+ 				</td>
+ 			</tr>
+ 		{{/each}}
+	</table>
+</div>

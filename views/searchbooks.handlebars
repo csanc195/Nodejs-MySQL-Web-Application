@@ -1,0 +1,25 @@
+<div class="page-header">
+	<h1 id="database_selected">Book Search</h1>
+</div>
+<div id="h-search-form" class="container" align="center">
+	<div class="col-lg-12">
+  		<form class="form-inline" role="form"  method="POST" action="/book/find">
+    	<div class="input-group centered-div">
+      		<span class="input-group-btn">
+       			<button id="search-books" class="btn btn-success" type="button">Search</button>
+     		</span>
+     		<input type="text" class="form-control" placeholder="Search for..." name="title">
+  		</div>
+  		</form>
+	</div>
+</div>
+<br>
+<div class="search-results">
+</div>
+{{>book_search}}
+<div class="container">
+  <br>
+  <br>
+  <br>
+  <br>
+</div>

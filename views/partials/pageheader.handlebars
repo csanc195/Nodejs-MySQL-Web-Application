@@ -1,0 +1,20 @@
+<div class="container">
+	<div class="row">
+		<div class="dropdown col-sm-6">
+		  	<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		    Select Action
+		    	<span class="caret"></span>
+		  	</button>
+		  	<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+		 	<li><a href="/book/list">Books</a></li>
+		 	<li><a href="/publisher/list">Publisher</a></li>
+		 	<li><a href="/author/list">Author</a></li>
+		 	<li><a href="/copy/list">Copy</a></li>
+		 	<li><a href="/book/search">Search Book</a></li>
+		 	</ul>
+		</div>
+		{{#if flash_message}}
+			<h5 >{{flash_message}}</h5>
+		{{/if}}
+	</div>
+</div>
