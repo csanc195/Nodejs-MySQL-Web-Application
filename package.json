@@ -4,7 +4,7 @@
   "description": "Simple application to perform CRUD operations on databases",
   "main": "index.js",
   "scripts": {
-    "test": "npm test',
+    "test": "npm test",
   },
   "author": "Carlos L Sanchez",
   "license": "ISC",
