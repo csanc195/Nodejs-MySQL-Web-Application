@@ -7,11 +7,11 @@ WORKDIR /home/node/app
 COPY package*.json ./
 
 
-RUN npm install
+RUN npm install -g
 
 COPY . /home/node/app
 
-EXPOSE 8080
+EXPOSE 4000
 
 #COPY nginx.conf /etc/nginx/conf.d/configfile.template
 
