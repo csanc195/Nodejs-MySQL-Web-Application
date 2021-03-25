@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm test",
     "start": "node server.js",
-  },
+  }
   "author": "Carlos L Sanchez",
   "license": "ISC",
   "dependencies": {
