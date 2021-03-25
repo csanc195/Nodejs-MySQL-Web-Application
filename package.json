@@ -4,7 +4,7 @@
   "description": "Simple application to perform CRUD operations on databases",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
     "start": "node server.js",
   },
   "author": "Carlos L Sanchez",
@@ -13,6 +13,6 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
-    "express-mysql-session": "^1.2.0"
+    "express-mysql-session": "^1.2.0",
   }
 }
